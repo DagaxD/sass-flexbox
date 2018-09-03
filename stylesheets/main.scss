@@ -1,0 +1,110 @@
+$blue: #6464b6; 
+
+.backgroundcolor{
+ background-color: $blue;   
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    //padding: 2px;
+    // justify-content: space-around;
+    align-items: stretch;
+}
+
+.columntext{
+    margin:10px;
+     font-size:30px; 
+     padding: 0 2px;
+     border-radius: 25px;
+     @extend .backgroundcolor;
+ }
+
+
+.column{
+   //margin:10px;
+    flex: 25%;
+    max-width:25%;  
+    font-size:30px; 
+    padding: 0 2px;
+}
+
+.column img{
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+$first-name: "Lo";
+$last-name:"Ve";
+
+@mixin string-concat-name {
+    &:after{
+        content:"Your name is: " + $first-name + " " + $last-name;
+        }
+    
+}
+h2{
+    @include string-concat-name;
+}
+
+@mixin linx ($link, $visit, $hover, $active){
+    a{
+        color: $link;
+
+        &:visited{
+            color: $visit;
+        }
+        &:hover {
+            color: $hover;
+        }
+        &:active {
+            color: $active;
+        }
+    }
+}
+#main {
+    @include linx(white, blue, green, red);
+}
+
+%textcolor{
+    color: rgb(86, 48, 136);
+}
+
+%bars{
+    margin:10px;
+    padding: 10px;
+    font-size:20px;
+    border-radius: 25px;
+}
+
+
+.bar{
+    @extend %textcolor;
+    @extend %bars;
+    @extend .backgroundcolor;
+    
+}
+
+.bar2{
+    @extend %textcolor;
+    @extend %bars;
+}

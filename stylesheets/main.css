@@ -1,0 +1,58 @@
+.backgroundcolor, .columntext, .bar {
+  background-color: #6464b6; }
+
+* {
+  box-sizing: border-box; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: stretch; }
+
+.columntext {
+  margin: 10px;
+  font-size: 30px;
+  padding: 0 2px;
+  border-radius: 25px; }
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  font-size: 30px;
+  padding: 0 2px; }
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle; }
+
+@media (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%; } }
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%; } }
+h2:after {
+  content: "Your name is: Lo Ve"; }
+
+#main a {
+  color: white; }
+  #main a:visited {
+    color: blue; }
+  #main a:hover {
+    color: green; }
+  #main a:active {
+    color: red; }
+
+.bar, .bar2 {
+  color: #563088; }
+
+.bar, .bar2 {
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 25px; }
+
+/*# sourceMappingURL=main.css.map */
